@@ -9,28 +9,14 @@
 header {
     background-color: #000000;
     background-size: cover;
+    width: 100%;
 }
 nav {
     display: flex;
 }
 
-git addnav .menubtn i{
-    font-size: 24px;
-    cursor: pointer;
-    display: none;
-    margin-right: 20px;
-}
-
-#click{
-    display: none;
-}
-
-#click:checked ~ .menubtn i::before{
-    content: "\f00d";
-}
-
-.logo {
-    width: 350px;
+.logo img{
+    width: 100%;
     padding: 20px 30px 25px 100px;
 }
 
@@ -88,6 +74,61 @@ git addnav .menubtn i{
     margin-top: 38px;
     margin-bottom: 35px;
 }
+
+
+
+.action_btn{
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 40px 0 0 10%;
+    display: none;
+}
+/* DROPDOWN */
+.drop_down {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 105px;
+    height: 0;
+    width: 100%;
+    background: #cbc9c9;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.drop_down.open{
+    height: 290px;
+}
+
+.drop_down li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.drop_down a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.Get2  a{
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #000000;
+    padding:8px;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 /* FIRSTPAGE */
 .firstpage {
@@ -166,7 +207,6 @@ git addnav .menubtn i{
 /* SECONDPAGE */
 .secondpage{
     padding-top: 5%;
-    /* padding-left: 15%; */
 }
 
 .secondpage h2{
@@ -376,77 +416,83 @@ git addnav .menubtn i{
 
 
 
-@media(max-width:940px){
-
-
-    .navbars a{
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        height: 80vh;
-        width: 100%;
-        display: block;
-        text-align: center;
-        font-size: 20px;
-    }
-    .menubtn i{
-        display: block;
-        color: #fff;
-        font-size: 20px;
-        margin: 30px;
-        margin-left: 60px;
-    }
-
-    .menubtn i:hover{
-        color: #ff4800;
-    }
-
-    #click:checked ~ .navbars a{
-        left: 0%;
-        display: block;
-    }
-    .fa-globe {
-        color: #000000;
-    }
-
-    .signin, .change {
+@media(max-width:950px) and (min-width:100px){
+    .navbars, .signin, .sign, .change2, .change {
         display: none;
     }
 
-    .sign, .change2 {
-        display: inline;
+    nav .action_btn {
+        display: block;
     }
 
-    .sign {
-        border: 1px solid #808080;
-        border-radius: 15px;
-        background-color: #808080;
-        box-sizing: border-box;
-        padding: 5px 20px 5px 20px;
-        margin-right: 20px;
+    .drop_down{
+        display: block;
+    }
+
+    .firstpage {
+        background-image: url(PAYONEERIMAGES/mobile-app-header-ime-desktop.png.webp);
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position-x: 250%;
+        background-color: rgb(245, 241, 241);
+        padding-top: 1%;
+        padding-left: 10px;
+        padding-bottom: 3%;
+    }
+
+    #clickables{
+        display: block;
+    }
+
+    .register2 a {
         text-decoration: none;
         color: #ffff;
-        margin-top: 33px;
-        margin-bottom: 35px;
-    
+        font-size: 20px;
     }
     
-    .reg {
-        border-width: 100px;
-        border: 1px solid #ffff;
-        border-radius: 15px;
-        background-color: #ffff;
+    .register2{
+        border: 1px solid #ff4800;
+        background-color:#ff4800;
         box-sizing: border-box;
-        padding: 5px 20px 5px 20px;
+        border-radius: 20px;
+        padding: 5px 70px 5px 70px;
+        width: 20%;
     }
-    .change2 {
-        margin-top: 38px;
-        margin-bottom: 35px;
+
+    .discover{
+        padding: 50px 0 0 70px;
     }
-    .change2 .reg{
-        color: #000000;
-        text-decoration: none;
+
+    #Partner{
+        display: block;
+        flex-direction: row;
+    }
+    .freel i, .Ecom i, .Cont i, .DigM i, .Travel i, .Music i{
+        margin-left: 43%;
+        margin-top: 20px;
+    }
+    .freel, .Ecom, .Cont, .DigM, .Travel, .Music{
+        border-left: 1px solid #cbc9c9;
+        border-right: 1px solid #cbc9c9;
+        border-top: 1px solid #c9c1c1;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .freel{
+        border-top: none;
+    }
+    .freel img, .Ecom img, .Cont img, .DigM img, .Travel img, .Music img{
+        width: 150px;
+        margin-left: 30%;
+    }
+}
+
+@media (max-width:576px){
+    .drop_down {
+        left: 2rem;
+        width: unset;
+    }
     
-    }
-    
+
 }
